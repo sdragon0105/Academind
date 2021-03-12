@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue Mastery</title>
+    <!-- Import Styles -->
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <!-- Import Vue.js -->
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+    
+  </head>
+  <body>
+    <header>
+      <h1>Monster Slayer</h1>
+    </header>
+    <div id="game">
+      <section id="monster" class="container">
+        <h2>Monster Health</h2>
+        <div class="healthbar">
+          <div class="healthbar_value" :style="monsterBarStyles"></div>
+        </div>
+      </section>
+      <section id="player" class="container">
+        <h2>Your Health</h2>
+        <div class="healthbar">
+          <div class="healthbar_value" :style="playerBarStyles"></div>
+        </div>
+      </section>
+      <section id="controls">        
+        <button @click="attackMonster">ATTACK</button>
+        <button :disabled="mayUseSpecialAttack" @click="spacialAttackMonster">SPECIAL ATTACK</button>
+        <button @click="healPlayer">HEAL</button>
+        <button>SURRENDER</button>
+      </section>
+      <section id="log" class="container">
+        <h2>Battle Log</h2>
+        <ul></ul>
+      </section>
+    </div>    
+    <script src="./main.js"></script>    
+  </body>
+</html>
